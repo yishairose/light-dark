@@ -1,15 +1,12 @@
 const toggleSwitch = document.querySelector('input[type="checkbox"]');
 const nav = document.querySelector('nav');
 const toggleIcon = document.querySelector('#toggle-icon');
-const image1 = document.querySelector('#image1');
-const image2 = document.querySelector('#image2');
-const image3 = document.querySelector('#image3');
+const images = document.querySelectorAll('.image')
 const textBox = document.getElementById('text-box');
 let isDark = false;
 function imageToggle(color) {
-    image1.src = `img/undraw_proud_coder_${color}.svg`;
-    image2.src = `img/undraw_feeling_proud_${color}.svg`;
-    image3.src = `img/undraw_conceptual_idea_${color}.svg`;
+    const imageArray = [{ image: images[0], src: `img/undraw_proud_coder_${color}.svg` }, { image: images[1], src: `img/undraw_feeling_proud_${color}.svg` }, { image: images[2], src: `img/undraw_conceptual_idea_${color}.svg` }]
+    imageArray.map((item) => { item.image.src = item.src });
 }
 
 function toggleMode(isDark, color) {
